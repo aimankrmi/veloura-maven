@@ -7,7 +7,7 @@
 <header class="d-flex p-0 sticky-top">
     <nav class="navbar navbar-expand-lg bg-body-tertiary w-100 h-100 justify-content-center">
         <div class="container-fluid">
-            <a class="navbar-brand logo" href="${pageContext.request.contextPath}"><b>Ve<span>l</span>oura&nbsp;Ci<span>n</span>ema</b></a>
+            <a class="navbar-brand logo" href="/"><b>Ve<span>l</span>oura&nbsp;Ci<span>n</span>ema</b></a>
             <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav" aria-controls="navbarNav"
                     aria-expanded="false" aria-label="Toggle navigation">
