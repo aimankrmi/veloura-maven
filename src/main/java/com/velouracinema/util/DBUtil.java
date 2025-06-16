@@ -13,7 +13,9 @@ public class DBUtil {
     private static final String DB_URL = System.getenv("DB_URL");  // Replace with your database URL
     private static final String DB_USER = System.getenv("DB_USER"); // Replace with your MySQL username
     private static final String DB_PASS = System.getenv("DB_PASS"); // Replace with your MySQL password
+
     public static Connection getConnection() {
+
         Connection connection = null;
 
         try {
