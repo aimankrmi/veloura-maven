@@ -10,12 +10,11 @@ import java.sql.SQLException;
 
 public class DBUtil {
 
-    private static final String url = System.getenv("DB_URL");  // Replace with your database URL
-    private static final String username = System.getenv("DB_USER"); // Replace with your MySQL username
-    private static final String password = System.getenv("DB_PASS"); // Replace with your MySQL password
-
+    private static final String DB_URL = System.getenv("DB_URL");  // Replace with your database URL
+    private static final String DB_USER = System.getenv("DB_USER"); // Replace with your MySQL username
+    private static final String DB_PASS = System.getenv("DB_PASS"); // Replace with your MySQL password
+    
     public static Connection getConnection() {
-
         Connection connection = null;
 
         try {
@@ -23,7 +22,7 @@ public class DBUtil {
             Class.forName("com.mysql.cj.jdbc.Driver"); // Not always needed, check your driver version
 
             // Establish the connection
-            connection = DriverManager.getConnection(url, username, password);
+            connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
 
             if (connection != null) {
                 System.out.println("Connected to MySQL successfully!");
