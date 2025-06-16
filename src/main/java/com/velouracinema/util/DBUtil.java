@@ -1,4 +1,3 @@
-
 package com.velouracinema.util;
 
 /**
@@ -11,11 +10,11 @@ import java.sql.SQLException;
 
 public class DBUtil {
 
-    public static Connection getConnection() {
+    private static final String url = System.getenv("DB_URL");  // Replace with your database URL
+    private static final String username = System.getenv("DB_USER"); // Replace with your MySQL username
+    private static final String password = System.getenv("DB_PASS"); // Replace with your MySQL password
 
-        String url = "jdbc:mysql://localhost:3306/cinema_db"; // Replace with your database URL
-        String username = "root"; // Replace with your MySQL username
-        String password = "aiman123"; // Replace with your MySQL password
+    public static Connection getConnection() {
 
         Connection connection = null;
 

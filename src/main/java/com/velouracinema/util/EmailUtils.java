@@ -1,4 +1,3 @@
-
 package com.velouracinema.util;
 
 import com.velouracinema.dao.booking.ShowtimeDAO;
@@ -25,8 +24,8 @@ import javax.mail.internet.MimeMessage;
  */
 public class EmailUtils {
 
-    private static final String EMAIL_FROM = "velouracinema@gmail.com";
-    private static final String APP_PASSWORD = "gykh pjgu dlap owuo";
+    private static final String EMAIL_FROM = System.getenv("USER EMAIL");
+    private static final String APP_PASSWORD = System.getenv("PASS_EMAIL");
 
     public static void sendEmailBookingConfirm(Booking booking, String recipientEmail) {
 
