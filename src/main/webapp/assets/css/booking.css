@@ -1,0 +1,283 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 16 May 2025, 10:02:17 pm
+    Author     : Aiman
+*/
+
+@import "styles.css";
+
+
+
+/*Movie Image*/
+.movie-picture-wrapper {
+    border: 1px solid var(--color-dark-gold);
+    height: auto;
+}
+
+.movie-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/*Showtimes Button*/
+
+.showtimes-item {
+    border: 1px solid var(--color-dark-gold) !important;
+    background: transparent;
+    padding: 15px 25px;
+    margin-right: 4px;
+}
+
+.showtimes-list .btn-check:disabled + .showtimes-item {
+    background-color: var(--color-light-gold) !important;
+    color: var(--color-black);
+}
+
+.selected {
+    background-color: var(--color-light-gold) !important;
+    color: var(--color-black);
+}
+
+.showtimes-list .btn-check:checked + .showtimes-item {
+    background-color: var(--color-dark-gold) !important;
+    color: var(--color-black);
+}
+.showtimes-list .btn-check:hover + .showtimes-item {
+    background-color: var(--color-light-gold) !important;
+    color: var(--color-black);
+}
+
+.btn-check.date-input,
+.btn-check.time-input {
+    pointer-events: initial !important;
+}
+
+/*Seat legend*/
+.seat-legend-selected,
+.seat-legend-reserved,
+.seat-legend-available {
+    border-color: pink;
+    height: 55px;
+    width: 70px;
+    /*background-color: var(--color-light-gold);*/
+}
+.seat-legend-selected,
+.seat-selected {
+    border: 1px solid var(--color-dark-gold);
+    background-color: var(--color-light-gold) !important;
+    color: var(--color-black);
+}
+.seat-legend-reserved,
+.seat-reserved {
+    border: 1px solid var(--color-dark-red);
+    background-color: var(--color-light-red) !important;
+    color: var(--color-black);
+}
+.seat-legend-available,
+.seat-available {
+    border: 1px solid var(--color-dark-gold);
+}
+
+/*Seat Selection*/
+
+.seat-selection-wrapper .seat-icon {
+    padding: 15px 25px;
+    margin-right: 4px;
+    width: 100%;
+    z-index: 99 !important;
+}
+.seat-selection-wrapper .seat-icon:hover {
+    color: var(--color-dark-gold) !important;
+}
+.seat-selection-wrapper .seat-icon.available {
+    border: 1px solid var(--color-dark-gold) !important;
+    background: transparent;
+    background-color: var(--color-black) !important;
+    color: var(--color-bright-gray);
+}
+
+.seat-selection-wrapper .seat-icon.selected {
+    background-color: var(--color-light-gold) !important;
+    color: var(--color-black);
+    height: auto;
+}
+
+.seat-row::before {
+    content: attr(data-seat);
+    margin: auto 0;
+    position: relative;
+    left: -15px;
+    top: 70%;
+}
+.seat-row::after {
+    content: attr(data-seat);
+    margin: auto 0;
+    position: relative;
+    right: -15px;
+    top: 70%;
+}
+
+.seat-row .col-1 {
+    max-width: 70px;
+    min-width: 70px;
+    padding: 0;
+    margin: 2px;
+}
+
+.seat-row .col-1 .btn-check {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+    opacity: 1 !important;
+    pointer-events: initial !important;
+}
+
+.seat-row .reserved {
+    background-color: var(--color-light-red) !important;
+    /*    z-index: 99;
+          opacity: 1;*/
+}
+
+/*Screen*/
+.screen {
+    border-top: 3px solid var(--color-dark-gold);
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    color: var(--color-bright-gray);
+    letter-spacing: 4px;
+    font-size: 14px;
+    width: 80vw;
+    /*min-width: 880px;*/
+}
+
+.screen::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    border-radius: 100%;
+    box-shadow: 1px 1px 20px rgba(237, 222, 128, 1);
+}
+
+/* Submit Button*/
+#submitButton,
+.selected-seat-text {
+    display: none;
+}
+
+/*Edit Booking*/
+
+.detail-wrapper {
+    border-bottom: 2px solid var(--color-dark-blue) !important;
+}
+
+h2.booking-title {
+    position: relative;
+}
+
+h2.booking-title span {
+    background-color: var(--color-black);
+    padding: 0 10px;
+}
+
+h2.booking-title::before {
+    content: "";
+    height: 2px;
+    width: 50vw;
+    background-color: var(--color-dark-blue);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: -9;
+}
+
+h2.booking-title::after {
+    content: "";
+    height: 2px;
+    width: 50vw;
+    background-color: var(--color-dark-blue);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -9;
+}
+
+.details-table tbody th,
+.details-table tbody td {
+    color: var(--color-bright-gray) !important;
+    background-color: var(--color-black) !important;
+}
+
+.info-box {
+    width: 160px;
+    height: auto;
+}
+
+/*.line {
+    color: var(--color-dark-blue);
+    font-size: 20px;
+    height: 20px;
+    border-width: 0;
+    background-color: var(--)
+}style="height:20px;border-width:0;color:gray;background-color:gray"*/
+
+/*Responsive*/
+@media (min-width: 0px) {
+    .seat-legend-container {
+        justify-content: center !important;
+    }
+}
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .seat-legend-container {
+        justify-content: start !important;
+    }
+
+    .screen,
+    .seat-selection-wrapper {
+        max-width: 880px;
+    }
+
+    .movie-picture-wrapper {
+        max-width: 750px;
+    }
+}
+/*Small devices (desktops, 576px and below)*/
+@media (max-width: 575px) {
+    .movie-desc-wrapper .movie-desc > div:not(.movie-lang){
+        border-bottom: 1px solid var(--color-bright-gray) !important;
+        padding: 10px 0;
+    }
+    .movie-lang {
+        padding-top: 10px;
+    }
+
+}
+/*Large devices (desktops, 576px and up)*/
+@media (min-width: 576px) {
+    .movie-desc-wrapper .movie-desc > div:not(.movie-lang){
+        border-right: 1px solid var(--color-bright-gray) !important;
+        padding: 0 20px !important;
+    }
+
+    .movie-lang{
+        padding-left: 20px;
+    }
+}
+/*X-Large devices (large desktops, 1200px and below)*/
+/*@media screen and (min-width: 1200px) { 
+    .seat-row .col-1{
+        min-width:70px;
+    }
+}*/

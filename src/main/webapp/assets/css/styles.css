@@ -1,0 +1,111 @@
+:root {
+  /* Color Palette */
+  --color-black: #1e1e1e; /* Eerie Black - main background */
+  --color-dark-cyan: #161f2e;
+  --color-dark-blue: #2b29ff; 
+  --color-light-blue: #4561f5; 
+  --color-light-gold: #edde80; /* Golden Sand - backgrounds, text */
+  --color-dark-gold: #d9c43f;
+  --color-bright-gray: #eeeeee; /* Light Gray - text, backgrounds */
+  --color-dark-green: #12734e; /* Dark Green - accents, borders */
+  --color-light-green: #55c0c8; /* Light Green - accents, borders */
+  --color-dark-red: #bc320d; /* Dark Red - accents, borders */
+  --color-light-red: #ff0000; /* Light Red - accents, borders */
+
+  --color-body-bg: var(--color-black);
+  --color-body-text: var(--color-bright-gray); /* Light text for contrast */
+
+  /* Button styles */
+  --btn-bg: var(--color-light-gold);
+  --btn-border: var(--color-dark-gold);
+  --btn-text: var(--color-black);
+  --btn-hover-bg: var(--color-dark-gold); /* Slightly darker coral for hover */
+  --btn-hover-border: var(--color-dark-gold);
+  --btn-hover-text: var(--color-black);
+  --btn-active-bg: var(--color-light-gold); /* Slightly darker coral for active */
+  --btn-active-border: var(--color-dark-gold);
+  --btn-active-text: var(--color-bright-gray);
+
+  /* Navbar colors */
+  --navbar-link-color: #2b29ff; /* Light gray for navbar links */
+  --navbar-link-hover-color: #2b2a83; /* Darker gray for hover */
+
+  /* Link colors */
+  --link-color-dark: #2b29ff;
+  --link-hover-color-dark: #2b2a83;
+  --link-color-light: #eeeeee;
+  --link-hover-color-light: #b0b0b0;
+}
+
+body {
+  background: var(--color-body-bg);
+
+  color: var(--color-body-text);
+  font-family: "Raleway", sans-serif;
+}
+
+
+
+.btn-primary {
+  background-color: var(--btn-bg) !important;
+  border-color: var(--btn-border) !important;
+  color: var(--btn-text) !important;
+  text-align: center !important;
+  transition: all 0.5s ease !important;
+}
+.btn-primary:hover {
+  background-color: var(--btn-hover-bg) !important;
+  border-color: var(--btn-hover-border) !important;
+  color: var(--btn-hover-text) !important;
+}
+.btn-primary:active {
+  background-color: var(--btn-active-bg) !important;
+  border-color: var(--btn-active-border) !important;
+  color: var(--btn-active-text) !important;
+}
+
+/* GLOW ANIMATION */
+.glow-gold {
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  animation: glow-gold 1s ease-in-out infinite alternate;
+}
+
+.glow-white {
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  animation: glow-white 1s ease-in-out infinite alternate;
+}
+
+.scrollbar-gold {
+  scrollbar-color: var(--color-dark-gold) var(--color-black) !important;
+  scrollbar-width: thin !important;
+}
+
+/*Glow animation*/
+@keyframes glow-gold {
+  from {
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px var(--color-light-gold),
+      0 0 8px var(--color-dark-gold);
+  }
+
+  to {
+    text-shadow: 0 0 4px #fff, 0 0 6px var(--color-light-gold), 0 0 8px var(--color-light-gold),
+      0 0 10px var(--color-light-gold);
+  }
+}
+
+@keyframes glow-white {
+  from {
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #dedede;
+  }
+
+  to {
+    text-shadow: 0 0 4px #fff, 0 0 6px #ffffff, 0 0 8px #ffffff;
+  }
+}
+
+
+

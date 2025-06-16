@@ -1,0 +1,161 @@
+/* 
+    Created on : 16 May 2025, 1:08:36 am
+    Author     : Aiman
+*/
+
+@import 'styles.css';
+
+header .navbar
+{
+    background-color: var(--color-black) !important;
+    color: var(--color-body-text);
+    font-size: 20px;
+    color: var(--color-light-accent);
+    padding: 1rem 2rem;
+    border-bottom: 5px solid var(--color-light-gold);
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0, 0.15);
+}
+
+.navbar-toggler {
+    border-color: white;
+}
+
+.navbar-toggler-icon {
+    border-color: white;
+}
+
+header a {
+    color: var(--navbar-link-color) !important;
+    text-decoration: none;
+    -webkit-transition: font-size 0.3s ease !important;
+    -moz-transition: font-size 0.3s ease !important;
+    -o-transition: font-size 0.3s ease !important;
+    transition: font-size 0.3s ease, color 0.1s ease-in !important;
+    
+}
+header a:hover {
+    color: var(--navbar-link-hover-color) !important;
+    font-size: 21px;
+}
+
+
+/*Custom toggler*/
+.custom-toggler.navbar-toggler {
+    border-color: var(--color-light-blue);
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("../icon/hamburger-menu.svg") !important;
+}
+
+.custom-toggler-icon {
+    background-color: transparent;
+}
+
+.navbar-toggler {
+    box-shadow: none !important; 
+}
+
+.custom-toggler:active {
+    background-color: var(--color-light-blue) !important;
+    box-shadow: 1px 1px 1px 1px rgba(255,0,0,0.15) !important;
+}
+
+
+/*Button Sign in*/
+.btn-sign-in{
+    background-color: transparent ;
+    border:none !important;
+    font-size: 20px;
+    color: var(--navbar-link-color) !important;
+    margin-left:37px;
+}
+
+.btn-sign-in:hover{
+    background-color: var(--color-light-blue) !important;
+    color: var(--color-black) !important;
+}
+
+.btn-sign-in .user-icon {
+  margin-right: 0.5rem;
+}
+
+
+
+
+/*Logo Animation*/
+.logo b{
+    font: 400 26px "Vibur";
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--color-light-gold), 0 0 0.5em var(--color-light-gold), 0 0 0.1em var(--color-light-gold), 0 10px 3px #000;
+}
+.logo b span{
+    animation: blink linear infinite 2s;
+}
+.logo b span:nth-of-type(2){
+    animation: blink linear infinite 3s;
+}
+@keyframes blink {
+    78% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    79%{
+        color: #333;
+    }
+    80% {
+
+        text-shadow: none;
+    }
+    81% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    82% {
+        color: #333;
+        text-shadow: none;
+    }
+    83% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+    92% {
+        color: #333;
+        text-shadow: none;
+    }
+    92.5% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+}
+
+
+/*Media responsive*/
+@media screen and (min-width: 991.98px) {
+  header {
+    font-weight: 500;
+  }
+}
+
+/* Add bottom border when navbar is toggled open on small screens */
+@media (max-width: 991.98px) {
+  /* Bootstrap breakpoint for lg */
+  .nav-item {
+    border-bottom: 2px solid var(--color-light-blue); 
+  }
+
+  .btn-sign-in {
+    margin-top: 0.5rem;
+    padding: 0 auto;
+    margin-left:8px;
+  }
+
+  .nav-item a,
+  .btn-sign-in {
+    padding: 0.5rem 1rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: var(--color-light-gray);
+  }
+}

@@ -1,0 +1,29 @@
+
+/* 
+    Created on : 16 May 2025, 3:44:31 pm
+    Author     : Aiman
+*/
+
+@import 'styles.css';
+
+footer{
+    border-top: 3px solid var(--color-light-gold);
+}
+
+.footer-text  a{
+    color: var(--color-light-gold) !important;
+    text-decoration: none;
+    width: 130px;
+}
+
+.footer-text .glow{
+    font-size: 16px;
+}
+
+footer .nav .nav-item .nav-link, footer .text-body-secondary{
+    color: var(--color-bright-gray) !important;
+}
+
+.nav {
+    border-bottom-color: var(--color-light-gold) !important;
+}
