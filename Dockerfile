@@ -8,7 +8,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Stage 2: Deploy to Tomcat 9 with JDK 17
-FROM tomcat:9.0-jdk17-temurin
+FROM tomcat:9.0-jdk17
 
 # Remove default ROOT webapp
 RUN rm -rf /usr/local/tomcat/webapps/ROOT
