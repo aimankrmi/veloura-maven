@@ -9,12 +9,14 @@ import java.util.Timer;
 import java.util.TimerTask;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 
 /**
  * Web application lifecycle listener.
  *
  * @author Aiman
  */
+@WebListener
 public class BookingCleanupTaskListener implements ServletContextListener {
 
     private Timer timer;
