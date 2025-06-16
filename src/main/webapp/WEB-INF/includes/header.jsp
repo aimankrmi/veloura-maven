@@ -17,7 +17,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
                     <li class="nav-item ">
-                        <a class="nav-link me-2 ms-2" href="${pageContext.request.contextPath}">Movies</a>
+                        <a class="nav-link me-2 ms-2" href="/">Movies</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link me-2 ms-2" href="${pageContext.request.contextPath}/support">Support</a>
