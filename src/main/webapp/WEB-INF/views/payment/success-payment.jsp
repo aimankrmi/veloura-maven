@@ -46,7 +46,7 @@
         </div>
         <script>
             setTimeout(function () {
-                window.location.href = '${pageContext.request.contextPath}';
+                window.location.href = '/member';
             }, 5000); // 5000 milliseconds = 5 seconds
         </script>
 

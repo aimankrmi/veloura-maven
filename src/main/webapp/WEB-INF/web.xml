@@ -83,10 +83,7 @@
         <servlet-name>SupportServlet</servlet-name>
         <servlet-class>com.velouracinema.controller.support.SupportServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>testServlets</servlet-name>
-        <servlet-class>testServlets</servlet-class>
-    </servlet>
+ 
     <servlet-mapping>
         <servlet-name>StaffDao</servlet-name>
         <url-pattern>/StaffDao</url-pattern>
