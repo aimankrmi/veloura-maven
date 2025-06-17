@@ -42,7 +42,7 @@
                 </c:when>
 
             </c:choose>
-                    <p class="text-center">You will be redirected in 5 seconds... If you are not redirected, <a href="${pageContext.request.contextPath}" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">click here</a></p>
+                    <p class="text-center">You will be redirected in 5 seconds... If you are not redirected, <a href="${pageContext.request.contextPath}/member" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">click here</a></p>
         </div>
         <script>
             setTimeout(function () {
