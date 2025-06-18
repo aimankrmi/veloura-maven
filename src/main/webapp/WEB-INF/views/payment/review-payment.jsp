@@ -114,10 +114,9 @@
                                                             <c:out value="${showtime.movie.title}" />
                                                         </td>
                                                         <td class="text-center">
-                                                            <fmt:formatDate value="${parsedDate}" pattern="dd/MM/yyyy"
-                                                                timeZone="Asia/Kuala_Lumpur" /> |
-                                                            <fmt:formatDate value="${parsedTime}" pattern="h:mm a"
-                                                                timeZone="Asia/Kuala_Lumpur" />
+                                                            <fmt:formatDate value="${parsedDate}"
+                                                                pattern="dd/MM/yyyy" /> |
+                                                            <fmt:formatDate value="${parsedTime}" pattern="h:mm a" />
                                                         </td>
                                                         <td class="text-center text-uppercase">
                                                             <c:out value="${booking.bookingDateFormatted}" />

@@ -99,8 +99,7 @@
                                                         <label class="btn btn-secondary showtimes-item date-label"
                                                             for="showtime_date_${status.index + 1}">
                                                             <fmt:formatDate value="${parsedDate}"
-                                                                pattern="dd MMMM yyyy (EEEE)"
-                                                                timeZone="Asia/Kuala_Lumpur" />
+                                                                pattern="dd MMMM yyyy (EEEE)" />
                                                         </label>
                                                     </c:forEach>
                                                 </c:if>
@@ -133,8 +132,8 @@
                                                                 autocomplete="off" data-time="${time}">
                                                             <label class="btn btn-secondary showtimes-item time-label"
                                                                 for="showtime_time_${status.index+1}">
-                                                                <fmt:formatDate value="${parsedTime}" pattern="h:mm a"
-                                                                    timeZone="Asia/Kuala_Lumpur" />
+                                                                <fmt:formatDate value="${parsedTime}"
+                                                                    pattern="h:mm a" />
                                                             </label>
 
                                                         </c:forEach>

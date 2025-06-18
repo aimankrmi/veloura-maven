@@ -72,11 +72,9 @@
                                                 <c:forEach items="${showtimes}" var="showtime">
                                                     <c:if test="${showtime.id == booking.showtimeId}">
                                                         <fmt:parseDate value="${ showtime.showDate}" type="both"
-                                                            var="parsedDate" pattern="yyyy-MM-dd"
-                                                            timeZone="Asia/Kuala_Lumpur" />
+                                                            var="parsedDate" pattern="yyyy-MM-dd" />
                                                         <fmt:parseDate value="${showtime.showTime}" type="time"
-                                                            var="parsedTime" pattern="HH:mm:ss"
-                                                            timeZone="Asia/Kuala_Lumpur" />
+                                                            var="parsedTime" pattern="HH:mm:ss" />
 
 
                                                         <tr>
@@ -88,10 +86,10 @@
                                                             </td>
                                                             <td class="text-center">
                                                                 <fmt:formatDate value="${parsedDate}"
-                                                                    pattern="dd/MM/yyyy" timeZone="Asia/Kuala_Lumpur" />
+                                                                    pattern="dd/MM/yyyy" />
                                                                 |
-                                                                <fmt:formatDate value="${parsedTime}" pattern="h:mm a"
-                                                                    timeZone="Asia/Kuala_Lumpur" />
+                                                                <fmt:formatDate value="${parsedTime}"
+                                                                    pattern="h:mm a" />
                                                             </td>
                                                             <td class="text-capitalize text-center">
                                                                 <c:out value="${booking.status}" />

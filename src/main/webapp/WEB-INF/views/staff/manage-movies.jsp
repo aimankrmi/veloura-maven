@@ -416,8 +416,7 @@
                                                                             <!-- Format the parsed date into the desired format  -->
                                                                             <fmt:formatDate var="formattedReleaseDate"
                                                                                 value="${parsedReleaseDate}"
-                                                                                pattern="MM/dd/yyyy"
-                                                                                timeZone="Asia/Kuala_Lumpur" />
+                                                                                pattern="MM/dd/yyyy" />
                                                                             <div class="mb-3">
                                                                                 <label for="date"
                                                                                     class="col-sm-2 col-form-label ">Release

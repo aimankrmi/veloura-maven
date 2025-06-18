@@ -69,10 +69,8 @@
                                             <td class="col-12 col-sm-6 text-center text-sm-start">
                                                 <c:out value="${showtime.movie.title}" /><br>
 
-                                                <fmt:formatDate value="${parsedDate}" pattern="dd MMMM yyyy"
-                                                    timeZone="Asia/Kuala_Lumpur" />
-                                                <fmt:formatDate value="${parsedTime}" pattern="h:mm a"
-                                                    timeZone="Asia/Kuala_Lumpur" />
+                                                <fmt:formatDate value="${parsedDate}" pattern="dd MMMM yyyy" />
+                                                <fmt:formatDate value="${parsedTime}" pattern="h:mm a" />
                                             </td>
                                         </tr>
                                         <tr class="row">
