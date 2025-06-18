@@ -272,8 +272,7 @@ public class BookingDAO {
 
     public static void setExpiredBooking(int bookingId) {
         String updateBooking = "UPDATE bookings SET status = 'expired' WHERE id = ?";
-        try (Connection conn = DBUtil.getConnection();
-                PreparedStatement bookStmt = conn.prepareStatement(updateBooking)) {
+        try (Connection conn = DBUtil.getConnection(); PreparedStatement bookStmt = conn.prepareStatement(updateBooking)) {
             bookStmt.setInt(1, bookingId);
             bookStmt.executeUpdate();
         } catch (SQLException ex) {
@@ -312,9 +311,9 @@ public class BookingDAO {
                     PaymentDAO.deletePayment(bookingId);// 2. Delete related payment
                     setExpiredBooking(bookingId); // 3. Mark booking as expired
                 } // If within 3 hours of showtime and payment method is counter or not chosen,
-                  // expire it
-                else if (within3HoursToShow && (paymentMethod == null || paymentMethod.equals("counter"))
-                        && status.equals("not_paid")) {
+                // expire it
+                else if (within3HoursToShow && (paymentMethod == null || (paymentMethod.equals("counter")
+                        && status.equals("not_paid"))))  {
                     System.out.println("BAYAR DI KAUNTER DAN SUDAH KURANG 3 JAM.");
                     SeatDAO.setAvailableSeatsByBookingId(bookingId);// 1. Set seats as available
                     PaymentDAO.deletePayment(bookingId);// 2. Delete related payment
