@@ -12,7 +12,9 @@ import com.velouracinema.model.User;
 import com.velouracinema.util.Utils;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,10 +32,10 @@ public class MemberServlet extends HttpServlet {
     /**
      * Handles the HTTP <code>GET</code> method.
      *
-     * @param request  servlet request
+     * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException      if an I/O error occurs
+     * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -61,13 +63,21 @@ public class MemberServlet extends HttpServlet {
             request.getRequestDispatcher("WEB-INF/views/member/member-dashboard.jsp").forward(request, response);
         } else if (path.equals("/viewBookingHistory")) {
             List<Booking> bookings = BookingDAO.getBookingByMemberId(userSession.getId());
-            request.setAttribute("bookings", bookings);
-            List<Showtime> showtimes = new ArrayList<>();
-            for (Booking booking : bookings) {
-                showtimes.add(ShowtimeDAO.getShowtimeById(booking.getShowtimeId()));
-            }
 
-            request.setAttribute("showtimes", showtimes);
+            Map<Integer, Showtime> showtimeMap = new HashMap<>();
+            for (Booking booking : bookings) {
+                Showtime st = ShowtimeDAO.getShowtimeById(booking.getShowtimeId());
+                showtimeMap.put(booking.getShowtimeId(), st);
+            }
+            request.setAttribute("bookings", bookings);
+            request.setAttribute("showtimeMap", showtimeMap);
+
+//            List<Showtime> showtimes = new ArrayList<>();
+//            for (Booking booking : bookings) {
+//                showtimes.add(ShowtimeDAO.getShowtimeById(booking.getShowtimeId()));
+//            }
+//
+//            request.setAttribute("showtimes", showtimes);
             request.getRequestDispatcher("WEB-INF/views/member/booking-history.jsp").forward(request, response);
 
         }

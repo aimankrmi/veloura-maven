@@ -73,6 +73,7 @@ public class EditBookingServlet extends HttpServlet {
             SeatDAO.setAvailableSeatsByBookingId(booking_id);
             PaymentDAO.deletePayment(booking_id);
             BookingDAO.cancelBookingByBookingId(booking_id);
+            System.out.println("BOOKING ID: " + booking_id);
             response.sendRedirect(request.getContextPath() + "/viewBookingHistory");
 
         }
