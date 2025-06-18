@@ -18,6 +18,7 @@ import com.velouracinema.model.User;
 import com.velouracinema.util.Utils;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -133,7 +134,7 @@ public class PaymentServlet extends HttpServlet {
 
         // To check if the showtime is less than 3 hours
         LocalDateTime showtimeTime = ShowtimeDAO.getShowtimeDateTime(showtimeId);
-        LocalDateTime nowTime = LocalDateTime.now();
+        LocalDateTime nowTime = LocalDateTime.now(ZoneId.of("Asia/Kuala_Lumpur"));
 
         boolean allowCounterPayment = nowTime.plusHours(3).isBefore(showtimeTime);
         // Store flag in request/session

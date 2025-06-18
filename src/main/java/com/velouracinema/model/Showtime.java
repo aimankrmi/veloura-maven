@@ -5,6 +5,7 @@ import com.velouracinema.util.Utils;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -88,7 +89,7 @@ public class Showtime implements java.io.Serializable {
             LocalTime time = LocalTime.parse(showTime, timeFormatter);
             LocalDateTime showDateTime = LocalDateTime.of(date, time);
 
-            return showDateTime.isAfter(LocalDateTime.now());
+            return showDateTime.isAfter(LocalDateTime.now(ZoneId.of("Asia/Kuala_Lumpur")));
         } catch (Exception e) {
             return false;
         }

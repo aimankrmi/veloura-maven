@@ -1,4 +1,3 @@
-
 package com.velouracinema.dao.booking;
 
 import com.velouracinema.dao.payment.PaymentDAO;
@@ -11,6 +10,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -127,16 +127,21 @@ public class BookingDAO {
     }
 
     public static int insertBooking(int memberId, int showtimeId) {
-        String sql = "INSERT INTO bookings (member_id, showtime_id, booking_date, expires_at) VALUES (?, ?, NOW(), DATE_ADD(NOW(), INTERVAL 15 MINUTE))";
+        String sql = "INSERT INTO bookings (member_id, showtime_id, booking_date, expires_at) VALUES (?, ?, ?, ?)";
         Connection conn = null;
         int bookingId = -1;
+
+        ZoneId zoneId = ZoneId.of("Asia/Kuala_Lumpur");
+        LocalDateTime now = LocalDateTime.now(zoneId);
+        LocalDateTime expiresAt = now.plusMinutes(15);
 
         try {
             conn = DBUtil.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             stmt.setInt(1, memberId);
             stmt.setInt(2, showtimeId);
-
+            stmt.setTimestamp(3, Timestamp.valueOf(now));
+            stmt.setTimestamp(4, Timestamp.valueOf(expiresAt));
             int affectedRows = stmt.executeUpdate();
 
             if (affectedRows == 0) {
@@ -286,7 +291,7 @@ public class BookingDAO {
 
             PreparedStatement stmt = conn.prepareStatement(query);
             ResultSet rs = stmt.executeQuery();
-            LocalDateTime now = LocalDateTime.now();
+            LocalDateTime now = LocalDateTime.now(ZoneId.of("Asia/Kuala_Lumpur"));
 
             while (rs.next()) {
                 String status = rs.getString("payment_status");

@@ -13,6 +13,8 @@ import com.velouracinema.util.EmailUtils;
 import com.velouracinema.util.Utils;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -65,7 +67,7 @@ public class PaymentProcessServlet extends HttpServlet {
             } else {
                 int showtimeId = Integer.parseInt(request.getParameter("showtimeId"));
                 LocalDateTime showtimeTime = ShowtimeDAO.getShowtimeDateTime(showtimeId);
-                if (LocalDateTime.now().plusHours(3).isAfter(showtimeTime)) {
+                if (LocalDateTime.now(ZoneId.of("Asia/Kuala_Lumpur")).plusHours(3).isAfter(showtimeTime)) {
                     // Too close to showtime, reject
                     request.setAttribute("error", "Cannot choose Pay at Counter for showtimes within 3 hours.");
                     request.getRequestDispatcher("payment.jsp").forward(request, response);
