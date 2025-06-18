@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Support Tickets</title>
+        <title>Veloura Cinema</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,12 +75,12 @@
 
 
         <div class="table-container container my-5">
-        <div>
-            <a href="${pageContext.request.contextPath}/staff"><i class="fa-solid fa-circle-chevron-left fa-xl mx-2" style="color: var(--color-light-gold);"></i></a>
+            <div>
+                <a href="${pageContext.request.contextPath}/staff"><i class="fa-solid fa-circle-chevron-left fa-xl mx-2" style="color: var(--color-light-gold);"></i></a>
 
-            <h1 class="glow-gold my-4 display-4 d-inline-block" style="text-align: left; ">Support Tickets</h1>
+                <h1 class="glow-gold my-4 display-4 d-inline-block" style="text-align: left; ">Support Tickets</h1>
 
-        </div>
+            </div>
             <c:if test="${success==1}">
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     Successfully update

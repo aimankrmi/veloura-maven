@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Booking Confirmed</title>
+        <title>Veloura Cinema</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
@@ -42,7 +42,7 @@
                 </c:when>
 
             </c:choose>
-                    <p class="text-center">You will be redirected in 5 seconds... If you are not redirected, <a href="${pageContext.request.contextPath}/member" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">click here</a></p>
+            <p class="text-center">You will be redirected in 5 seconds... If you are not redirected, <a href="${pageContext.request.contextPath}/member" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">click here</a></p>
         </div>
         <script>
             setTimeout(function () {

@@ -1,4 +1,3 @@
-
 package com.velouracinema.model;
 
 import java.time.LocalDateTime;

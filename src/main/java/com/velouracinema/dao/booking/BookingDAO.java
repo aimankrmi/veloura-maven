@@ -313,7 +313,7 @@ public class BookingDAO {
                 } // If within 3 hours of showtime and payment method is counter or not chosen,
                 // expire it
                 else if (within3HoursToShow && (paymentMethod == null || (paymentMethod.equals("counter")
-                        && status.equals("not_paid"))))  {
+                        && status.equals("not_paid")))) {
                     System.out.println("BAYAR DI KAUNTER DAN SUDAH KURANG 3 JAM.");
                     SeatDAO.setAvailableSeatsByBookingId(bookingId);// 1. Set seats as available
                     PaymentDAO.deletePayment(bookingId);// 2. Delete related payment

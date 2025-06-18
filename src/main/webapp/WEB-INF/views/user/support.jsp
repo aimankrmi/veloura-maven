@@ -10,7 +10,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Support - Cinemax</title>
+        <title>Support</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Bootstrap & Fonts -->
@@ -94,31 +94,31 @@
             </div>
         </div>
 
-    <c:if test="${param.success == '1'}">
-        
-        <script>
-            window.addEventListener('DOMContentLoaded', () => {
-                document.getElementById("modalMessage").innerText = "Support request submitted successfully!";
-                document.getElementById("modalContent").classList.add("border-success");
-                document.getElementById("modalContent").classList.remove("border-danger");
-                document.getElementById("feedbackModalLabel").classList.add("text-success");
-                document.getElementById("feedbackModalLabel").classList.remove("text-danger");
-                new bootstrap.Modal(document.getElementById("feedbackModal")).show();
-            });
-        </script>
-    </c:if>
+        <c:if test="${param.success == '1'}">
+
+            <script>
+                window.addEventListener('DOMContentLoaded', () => {
+                    document.getElementById("modalMessage").innerText = "Support request submitted successfully!";
+                    document.getElementById("modalContent").classList.add("border-success");
+                    document.getElementById("modalContent").classList.remove("border-danger");
+                    document.getElementById("feedbackModalLabel").classList.add("text-success");
+                    document.getElementById("feedbackModalLabel").classList.remove("text-danger");
+                    new bootstrap.Modal(document.getElementById("feedbackModal")).show();
+                });
+            </script>
+        </c:if>
         <c:if test="${param.success == '0'}">
-        
-        <script>
-            window.addEventListener('DOMContentLoaded', () => {
-                document.getElementById("modalMessage").innerText = "Something went wrong. Please try again.";
-                document.getElementById("modalContent").classList.add("border-danger");
-                document.getElementById("modalContent").classList.remove("border-success");
-                document.getElementById("feedbackModalLabel").classList.add("text-danger");
-                document.getElementById("feedbackModalLabel").classList.remove("text-success");
-                new bootstrap.Modal(document.getElementById("feedbackModal")).show();
-            });
-        </script>
+
+            <script>
+                window.addEventListener('DOMContentLoaded', () => {
+                    document.getElementById("modalMessage").innerText = "Something went wrong. Please try again.";
+                    document.getElementById("modalContent").classList.add("border-danger");
+                    document.getElementById("modalContent").classList.remove("border-success");
+                    document.getElementById("feedbackModalLabel").classList.add("text-danger");
+                    document.getElementById("feedbackModalLabel").classList.remove("text-success");
+                    new bootstrap.Modal(document.getElementById("feedbackModal")).show();
+                });
+            </script>
         </c:if>
 
         <div class="container my-5">

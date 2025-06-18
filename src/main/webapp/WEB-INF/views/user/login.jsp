@@ -9,7 +9,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Velora Cinema - Login</title>
+        <title>Velora Cinema</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Bootstrap & Fonts -->
@@ -65,7 +65,7 @@
         </style>
     </head>
     <body>
-        
+
         <!-- Include Header -->
         <jsp:include page="../../includes/header.jsp" flush="true"/>
         <!-- Page Title -->
@@ -85,7 +85,7 @@
                 </div>
             </c:if>
             <p class=" text-light">Login with your credentials to continue booking. If you are not registered, sign up first.</p>
-            
+
             <form action="${pageContext.request.contextPath}/login" method="post">
                 <input type="hidden" name="movieId" value="${movieId}">
                 <input type="hidden" name="date-show" value="${date}">

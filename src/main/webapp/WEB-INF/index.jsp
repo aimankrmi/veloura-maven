@@ -11,7 +11,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Veloura Cinema Homepage</title>
+        <title>Veloura Cinema</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,6 @@
         <link rel="stylesheet" href="assets/css/header.css"/>
         <link rel="stylesheet" href="assets/css/footer.css"/>
         <link rel="stylesheet" href="assets/css/movie.css">
-
     </head>
 
     <body>
@@ -37,7 +36,7 @@
             <jsp:include page="includes/header.jsp" flush="true" />
 
             <!-- Hero Section -->
-            <section class="hero-section">
+            <section class="hero-section px-3 pt-4 pb-5">
                 <div class="carousel-container">
                     <img
                         src="assets/images/LFD.jpg"
@@ -65,13 +64,13 @@
                                             src="${pageContext.request.contextPath}/assets/images/${movie.imagePath}"
                                             alt="${movie.title} Poster"
                                             />
-                                        <div class="movie-info">
+                                        <div class="movie-info  text-capitalize">
                                             <div class="details text-wrap">
                                                 Genre: ${movie.genre}<br />
                                                 Duration: ${movie.hours} hr ${movie.minutes} mins
                                                 <br />
                                                 Language: ${movie.language}<br />
-                                                Subtitle: ENG, MALAY
+                                                Subtitle: English, Malay
                                             </div>
                                             <a
                                                 class="btn btn-primary"
@@ -99,13 +98,13 @@
                                             src="${pageContext.request.contextPath}/assets/images/${movie.imagePath}"
                                             alt="${movie.title} Poster"
                                             />
-                                        <div class="movie-info">
+                                        <div class="movie-info text-capitalize">
                                             <div class="details">
                                                 Genre: ${movie.genre}<br />
                                                 Duration: ${movie.hours} hr ${movie.minutes} mins
                                                 <br />
                                                 Language: ${movie.language}<br />
-                                                Subtitle: ENG, MALAY
+                                                Subtitle: English, Malay
                                             </div>
                                             <a
                                                 class="btn btn-primary"
@@ -125,99 +124,14 @@
             <!-- Top 10 Ranking Section -->
             <section class="top-movies-section container mb-5">
                 <h2 class="glow-gold mb-4">Top 10 Movies</h2>
-                
+
                 <div class="row">
                     <c:forEach items="${topMovies}" var="topMovie" varStatus="status">
-                    <div class="col-md-6 col-12 col-sm-12 movie-rank">
-                        <span class="glow-white">${status.index +1}</span> ${topMovie.movie.title}
-                        <span class="badge ${topMovie.movie.status == "Ongoing" ? "now" : "coming"}">${topMovie.movie.status}</span>
-                    </div>
+                        <div class="col-md-6 col-12 col-sm-12 movie-rank">
+                            <span class="glow-white">${status.index +1}</span> ${topMovie.movie.title}
+                            <span class="badge ${topMovie.movie.status == "Ongoing" ? "now" : "coming"}">${topMovie.movie.status}</span>
+                        </div>
                     </c:forEach>
-<!--                    <div class="col-md-6 col-12 col-sm-12 movie-rank">
-                        <span class="glow-white">2</span> Final Destination Bloodlines
-                        <span class="badge coming">Coming Soon</span>
-                    </div>
-                    <div class="col-md-6 col-12 col-sm-12 movie-rank">
-                        <span class="glow-white">3</span> Barbie
-                        <span class="badge now">Now Showing</span>
-                    </div>
-                    <div class="col-md-6 col-12 col-sm-12 movie-rank">
-                        <span class="glow-white">4</span> Spider-Man: Across the Spider-Verse
-                        <span class="badge now">Now Showing</span>
-                    </div>
-                    <div class="col-md-6 col-12 col-sm-12 movie-rank">
-                        <span class="glow-white">5</span> Wonka
-                        <span class="badge now">Now Showing</span>
-                    </div>
-                    <div class="col-md-6 col-12 col-sm-12 movie-rank">
-                        <span class="glow-white">6</span> Barbie
-                        <span class="badge now">Now Showing</span>
-                    </div>
-                    <div class="col-md-6 col-12 col-sm-12 movie-rank">
-                        <span class="glow-white">7</span> Barbie
-                        <span class="badge now">Now Showing</span>
-                    </div>
-                    <div class="col-md-6 col-12 col-sm-12 movie-rank">
-                        <span class="glow-white">8</span> Barbie
-                        <span class="badge now">Now Showing</span>
-                    </div>
-                    <div class="col-md-6 col-12 col-sm-12 movie-rank">
-                        <span class="glow-white">9</span> Barbie
-                        <span class="badge now">Now Showing</span>
-                    </div>
-                    <div class="col-md-6 col-12 col-sm-12 movie-rank">
-                        <span class="glow-white">10</span> Barbie
-                        <span class="badge now">Now Showing</span>
-                    </div>
-                </div>-->
-
-                <!--                <div class="top10-grid">
-                                    <div class="movie-rank">
-                                        <span class="rank">1</span> Blood Brothers: Bara Naga
-                                        <span class="badge now">Now Showing</span>
-                                    </div>
-                                    <div class="movie-rank">
-                                        <span class="rank">6</span> Avatar: The Way of Water
-                                        <span class="badge now">Now Showing</span>
-                                    </div>
-                
-                                    <div class="movie-rank">
-                                        <span class="rank">2</span> Final Destination Bloodlines
-                                        <span class="badge coming">Coming Soon</span>
-                                    </div>
-                                    <div class="movie-rank">
-                                        <span class="rank">7</span> Howl's Moving Castle
-                                        <span class="badge coming">Coming Soon</span>
-                                    </div>
-                
-                                    <div class="movie-rank">
-                                        <span class="rank">3</span> Barbie
-                                        <span class="badge now">Now Showing</span>
-                                    </div>
-                                    <div class="movie-rank">
-                                        <span class="rank">8</span> Oppenheimer
-                                        <span class="badge now">Now Showing</span>
-                                    </div>
-                
-                                    <div class="movie-rank">
-                                        <span class="rank">4</span> Spider-Man: Across the Spider-Verse
-                                        <span class="badge now">Now Showing</span>
-                                    </div>
-                                    <div class="movie-rank">
-                                        <span class="rank">9</span> Puss in Boots: The Last Wish
-                                        <span class="badge coming">Coming Soon</span>
-                                    </div>
-                
-                                    <div class="movie-rank">
-                                        <span class="rank">5</span> Wonka
-                                        <span class="badge coming">Coming Soon</span>
-                                    </div>
-                                    <div class="movie-rank">
-                                        <span class="rank">10</span>
-                                        Hunger Games: The Ballad of Songbirds & Snakes
-                                        <span class="badge now">Now Showing</span>
-                                    </div>-->
-                <!--</div>-->
             </section>
 
             <jsp:include page="includes/footer.jsp" flush="true" />

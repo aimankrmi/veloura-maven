@@ -57,6 +57,9 @@ body {
     overflow: hidden;
     position: relative;
     box-shadow: 0 0 10px rgba(237, 222, 128, 0.3);
+}
+
+.movie-card img{
     transition: 0.3s ease;
 }
 
@@ -73,8 +76,8 @@ body {
     border-radius: 10px;
 }
 
-.movie-card:hover {
-    filter: brightness(0.6);
+.movie-card:hover img {
+    filter: brightness(0.4) !important;
 }
 
 .movie-info {
@@ -94,10 +97,12 @@ body {
 .movie-card:hover .movie-info {
     opacity: 1;
     color: var(--color-bright-gray);
+    filter: brightness(1) !important;
+    z-index: 1000 !important;
 }
 
 .movie-info button {
-    background-color: #EDDE80;
+    background-color: var(--color-light-gold);
     color: #000;
     border: none;
     padding: 8px 12px;
@@ -107,7 +112,7 @@ body {
 }
 
 .movie-info .details {
-    font-size: 14px;
+    font-size: 1em;
     line-height: 1.6;
 }
 
@@ -267,12 +272,12 @@ body {
 /*Responsiveness*/
 @media (max-width: 768px) {
     .movie-scroll-wrapper .movie-card {
-        min-width: 150px;
-        max-width: 150px;
+        min-width: 200px;
+        max-width: 200px;
     }
 
     .movie-card img {
-        height: 220px;
+        height: 300px;
     }
 }
 
@@ -358,12 +363,14 @@ body.intro-complete #intro-container {
 .hero-section {
     position: relative;
     width: 100%;
-    height: 80vh;
+/*    height: 80vh;*/
+
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: black;
+    /*background-color: var(--color-body-bg);*/
+   
 }
 
 /* Carousel Container for 1500x500 images */
@@ -379,7 +386,7 @@ body.intro-complete #intro-container {
 
 .carousel-container img {
     width:100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
