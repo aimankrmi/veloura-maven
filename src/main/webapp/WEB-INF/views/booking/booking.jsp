@@ -28,8 +28,7 @@
 
 
         <!--Form to book-->
-        <form action="${pageContext.request.contextPath}/${user.id==0 ? " login?message=Please login
-                        first":"payment" }" id="bookingForm" method="POST">
+        <form action="${pageContext.request.contextPath}/${user.id==0 ? "login":"payment" }" id="bookingForm" method="POST">
             <input type="hidden" name="bookingToken" value="${bookingToken}" />
             <input type="hidden" name="bookingTokenTime" value="${bookingTokenTime}" />
             <div class="fluid-container pt-3">
@@ -53,7 +52,7 @@
                     <section
                         class="movie-desc-wrapper mt-3 d-flex flex-sm-column flex-column justify-content-center align-items-center">
                         <div class="movie-title">
-                            <h1 class="glow-gold fs-1 text-start text-capitalize">${movie.title}</h1>
+                            <h1 class="glow-gold fs-1 text-start text-capitalize text-center">${movie.title}</h1>
                             <input type="hidden" name="showtime-movie-id" value="${showtime.movie.movieId}">
                         </div>
                         <div class="movie-desc d-flex flex-sm-row flex-column py-1">

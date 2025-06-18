@@ -98,7 +98,7 @@ public class LoginServlet extends HttpServlet {
 
             if (!date.equals("") && !time.equals("") && !movieId.equals("")) {
                 String message = "Please login first";
-                response.sendRedirect(request.getContextPath() + "/login?message=" + message+"&time-show="+time+"&date-show="+date+"&movieId="+movieId);
+                response.sendRedirect(request.getContextPath() +"/login?message=" + message+"&time-show="+time+"&date-show="+date+"&movieId="+movieId);
             } else {
                 String error = "User does not exists";
                 response.sendRedirect(request.getContextPath() + "/login?error=" + error);
