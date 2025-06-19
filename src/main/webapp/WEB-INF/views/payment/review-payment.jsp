@@ -85,7 +85,7 @@
                             <th class="text-center" scope="col">Booking Date</th>
                             <th class="text-center" scope="col">Booking Status</th>
                             <th class="text-center" scope="col">Payment Method</th>
-                            <th class="text-center" scope="col">Payment Amount</th>
+                            <th class="text-center" scope="col">Payment Amount (RM)</th>
                             <th class="text-center" scope="col">Payment Status</th>
                         </tr>
                     </thead>
@@ -128,7 +128,8 @@
                                                 <c:out value="${booking.payment.paymentMethod}" />
                                             </td>
                                             <td class="text-center">
-                                                <c:out value="${booking.payment.amount}" />
+                                                <fmt:formatNumber type = "number" 
+                                                                  maxFractionDigits="2" minFractionDigits="2" value = "${booking.payment.amount}" />
                                             </td>
                                             <td class="text-center">
 

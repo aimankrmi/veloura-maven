@@ -238,7 +238,7 @@
                             <th scope="col">Language</th>
                             <th scope="col">Duration</th>
                             <th scope="col">Description</th>
-                            <th scope="col">Price</th>
+                            <th scope="col">Price (RM)</th>
                             <th scope="col">Image Path</th>
                             <th scope="col">Release Date</th>
                             <th scope="col">Action</th>
@@ -256,7 +256,9 @@
                                     <td class="text-capitalize">${movie.language}</td>
                                     <td>${movie.duration}</td>
                                     <td>${movie.description}</td>
-                                    <td>${movie.price}</td>
+                                    <td> <fmt:formatNumber type = "number" 
+                                                      maxFractionDigits="2" minFractionDigits="2" value = "${movie.price}" />
+                                    </td>
                                     <td>${movie.imagePath}</td>
                                     <td>${movie.releaseDate}</td>
                                     <td>

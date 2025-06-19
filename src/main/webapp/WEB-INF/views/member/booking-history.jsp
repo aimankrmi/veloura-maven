@@ -60,7 +60,7 @@
                                 <th class="text-center" scope="col">Booking Status</th>
                                 <th class="text-center" scope="col">Booking Seats</th>
                                 <th class="text-center" scope="col">Payment Method</th>
-                                <th class="text-center" scope="col">Payment Amount</th>
+                                <th class="text-center" scope="col">Payment Amount (RM)</th>
                                 <th class="text-center" scope="col">Payment Status</th>
                                 <th class="text-center" scope="col">Action</th>
 
@@ -106,7 +106,9 @@
                                             <c:out value="${booking.payment.paymentMethod}" />
                                         </td>
                                         <td class="text-center">
-                                            <c:out value="${booking.payment.amount}" />
+                                            <fmt:formatNumber type = "number" 
+                                                              maxFractionDigits="2" minFractionDigits="2" value = "${booking.payment.amount}" />
+                                            <%--<c:out value="${booking.payment.amount}" />--%>
                                         </td>
                                         <td class="text-capitalize text-center">
                                             <c:out value="${booking.payment.status}" />
@@ -181,22 +183,22 @@
                                     </tr>
                                 </c:if>
                             </c:forEach>
-                        <%--</c:forEach>--%>
+                            <%--</c:forEach>--%>
 
 
-                    </tbody>
-                </table>
-            </div>
-        </c:if>
-        <c:if test="${empty bookings}">
-            <div class="text-center glow-white my-5">NO BOOKING EXISTS</div>
-        </c:if>
+                        </tbody>
+                    </table>
+                </div>
+            </c:if>
+            <c:if test="${empty bookings}">
+                <div class="text-center glow-white my-5">NO BOOKING EXISTS</div>
+            </c:if>
 
-    </div>
+        </div>
 
-    <jsp:include page="../../includes/footer.jsp" flush="true" />
+        <jsp:include page="../../includes/footer.jsp" flush="true" />
 
-    <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>
