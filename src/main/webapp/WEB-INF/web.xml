@@ -100,7 +100,7 @@
         <error-code>409</error-code>
         <location>/WEB-INF/views/error/409.jsp</location>
     </error-page>
-    <!--    <error-page>
+<!--    <error-page>
         <location>WEB-INF/views/error/error.jsp</location>
     </error-page>-->
     <servlet-mapping>
